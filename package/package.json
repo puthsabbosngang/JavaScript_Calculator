@@ -1,0 +1,32 @@
+{
+  "name": "javascript_calulator",
+  "version": "1.0.0",
+  "description": "JavaScript calculator project for learning and practice.",
+  "keywords": [
+    "calculator",
+    "javascript",
+    "math",
+    "arithmetic",
+    "webapp",
+    "learning",
+    "practice"
+  ],
+  "homepage": "https://github.com/puthsabbosngang/JavaScript_Calulator#readme",
+  "bugs": {
+    "url": "https://github.com/puthsabbosngang/JavaScript_Calulator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puthsabbosngang/JavaScript_Calulator.git"
+  },
+  "license": "ISC",
+  "author": "Mr.NGANG Puthsabbos",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7"
+  }
+}
