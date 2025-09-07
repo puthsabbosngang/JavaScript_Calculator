@@ -4,6 +4,16 @@ let a_val = "";// value before operater
 let l_c = "";// last clicked type
 let re = "";// result
 
+// remove decimall trailing (3. => 3, 3.20 => 3.2, 03 => 3)
+function remove_trailing(val){
+    val = val.replace(/^0+(\d)/, '$1');
+    if (val.indexOf('.') !== -1) {
+        val = val.replace(/\.?0*$/, '');
+    }
+    return val;
+}
+
+// C button)
 function clear_all() {
     let input = document.querySelector('.input-area'); // bottom display
     let display = document.querySelector('.display-area');// top display
@@ -16,9 +26,20 @@ function clear_all() {
     re = "";
 }
 
+// CE button
 function clear_input() {
-    let input = document.querySelector('.input-area');
-    input.value = '0';
+    if (l_c === "="){
+        clear_all()
+    }
+    else {
+        let input = document.querySelector('.input-area');
+        input.value = '0';
+        b_val = "";
+        c_op = "";
+        a_val = "";
+        l_c = "";
+        re = "";
+    }
 }
 
 function back_space() {
@@ -30,9 +51,18 @@ function back_space() {
     }
 }
 
-function add(a, b) { return a + b; }
-function subtract(a, b) { return a - b; }
-function multiply(a, b) { return a * b; }
+function add(a, b) { 
+    return a + b; 
+}
+
+function subtract(a, b) { 
+    return a - b; 
+}
+
+function multiply(a, b) {
+    return a * b; 
+}
+
 function divide(a, b) {
     if (b === 0) {
         alert("Error: Division by zero");
@@ -126,7 +156,9 @@ function calculate_result() {
     }
 
     re = Number(re.toFixed(2)).toString();
-
+    if (c_op === ""){
+        return;
+    }
     display.value = b_val + c_op + a_val + '=';
     input.value = result;
     b_val = re;
@@ -141,7 +173,7 @@ function append_val(val) {
     const eq = val === '='; // equal operater
 
     // eq then eq
-    if ((l_c === "=" || l_c === "special" ) && eq ) {
+    if ((l_c === "=" || l_c === "special" || l_c ==="") && eq ) {
         return;
     }
 
@@ -192,9 +224,29 @@ function append_val(val) {
         return;
     }
 
+    if (c_op && l_c === "op" && eq) {
+        a_val = b_val; // repeat the last value
+        let a = parseFloat(b_val);
+        let b = parseFloat(a_val);
+        switch (c_op) {
+            case '+': re = add(a, b); break;
+            case '-': re = subtract(a, b); break;
+            case '*': re = multiply(a, b); break;
+            case '/': re = divide(a, b); break;
+            default: re = b;
+        }
+        re = Number(re.toFixed(2)).toString();
+        display.value = b_val + c_op + a_val + '=';
+        input.value = re;
+        b_val = re;
+        c_op = "";
+        l_c = "=";
+        return;
+    }    
+
     // op, num , op or eq 
     if (c_op && l_c === "num" && (op || eq)) {
-        a_val = input.value;
+        a_val = remove_trailing(input.value);
         let a = parseFloat(b_val);
         let b = parseFloat(a_val);
         switch (c_op) {
@@ -234,15 +286,18 @@ function append_val(val) {
                 return;
             }
             input.value += val.toString();
-        }    
-        if (!c_op) b_val = input.value;
+        }
+        if (!c_op) b_val = remove_trailing(input.value);
         l_c = "num";
-    } else if (op) {
-        c_op = val;
-        b_val = input.value;
-        display.value = b_val + c_op;
-        l_c = "op";
-    } else if (eq) {
-        calculate_result();
+    } else if (op || eq) {
+        input.value = remove_trailing(input.value)
+        if (op){
+            c_op = val;
+            b_val = input.value;
+            display.value = b_val + c_op;
+            l_c = "op";
+        } else if (eq) {
+            calculate_result();
+        }
     }
 }

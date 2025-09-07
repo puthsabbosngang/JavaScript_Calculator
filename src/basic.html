@@ -11,6 +11,24 @@
 </head>
 <body>
     <div class="calculator">
+
+        <!--navbar-->
+        <nav class="navbar navbar-light px-2">
+            <button class=" btn nav-tgg-btn"><i class="navbar-toggler-icon"></i> </button>
+            <span class="ms-2 fw-semibold">Standard</span>
+            <button class=" btn history-btn ms-auto "><i class="bi bi-clock-history"></i></button>
+        </nav>
+
+        <!--Calculation menu
+        <div class="history" id="historyPanel">
+            <div class="navbar navbar-light px-2 d-flex align-items-center">
+                <button class="btn nav-tgg-btn me-2">
+                    <i class="navbar-toggler-icon"></i>
+                </button>
+                <h4 class="m-0">Calculator</h4>
+            </div>
+        </div>-->
+
         <div class="form-control display text-end">
             <input type="text" class="display-area text-end" value="" disabled>
             <input type="text" class="input-area text-end" value="0" disabled>
@@ -57,7 +75,7 @@
                 <button class="btn btn-light w-100" onclick="square_root()">
                     <math>
                         <msqrt>
-                            <mi>x</mi>
+                            <mi style="padding-top: 5px;">x</mi>
                         </msqrt>
                     </math>
                 </button>
