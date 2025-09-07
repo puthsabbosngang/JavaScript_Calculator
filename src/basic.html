@@ -27,15 +27,15 @@
             <div class="col-2 btn btn-light memory-btn">M</div>
 
             <!-- 1 -->
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue('%')">%</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="clearInput()">CE</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="clearAll()">C</button></div>
-            <div class="col-3"><button class="btn btn-warning w-100" onclick="clearLast()">
+            <div class="col-3"><button class="btn btn-light w-100" onclick="percentage()">%</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="clear_input()">CE</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="clear_all()">C</button></div>
+            <div class="col-3"><button class="btn btn-warning w-100" onclick="back_space()">
             <i class="bi-backspace"></i>
             </button></div>
 
             <!-- 2 -->
-            <div class="col-3"><button class="btn btn-light w-100">
+            <div class="col-3"><button class="btn btn-light w-100" onclick="one_dvide_x()">
                 <math xmlns="http://www.w3.org/1998/Math/MathML">
                     <mfrac>
                         <mn>1</mn>
@@ -44,7 +44,7 @@
                 </math>
             </button></div>
             <div class="col-3">
-                <button class="btn btn-light w-100">
+                <button class="btn btn-light w-100" onclick="square()">
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <msup>
                             <mi>x</mi>
@@ -54,7 +54,7 @@
                 </button>
             </div>
             <div class="col-3">
-                <button class="btn btn-light w-100">
+                <button class="btn btn-light w-100" onclick="square_root()">
                     <math>
                         <msqrt>
                             <mi>x</mi>
@@ -62,33 +62,33 @@
                     </math>
                 </button>
             </div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue('/')">÷</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val('/')">÷</button></div>
 
             <!-- 3 -->
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(7)">7</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(8)">8</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(9)">9</button></div>
-            <div class="col-3"><button class="btn btn-light w-100">
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(7)">7</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(8)">8</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(9)">9</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val('*')">
                 <i class="bi bi-x"></i>
             </button></div>
 
             <!-- 4 -->
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(4)">4</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(5)">5</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(6)">6</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue('-')">-</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(4)">4</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(5)">5</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(6)">6</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val('-')">-</button></div>
 
             <!-- 5 -->
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(1)">1</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(2)">2</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue(3)">3</button></div>
-            <div class="col-3"><button class="btn btn-light w-100" onclick="appendValue('+')">+</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(1)">1</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(2)">2</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(3)">3</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val('+')">+</button></div>
 
             <!-- 6 -->
-            <div class="col-3"><button class="btn btn-light w-100">+/-</button></div>
-            <div class="col-3"><button class="btn btn-light w-100">0</button></div>
-            <div class="col-3"><button class="btn btn-light w-100">.</button></div>
-            <div class="col-3"><button class="btn btn-primary w-100">=</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="toggle_sign()">+/-</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val(0)">0</button></div>
+            <div class="col-3"><button class="btn btn-light w-100" onclick="append_val('.')">.</button></div>
+            <div class="col-3"><button class="btn btn-primary w-100" onclick="append_val('=')">=</button></div>
         </div>
     </div>
     <script src="/src/script/bootstrap.bundle.min.js"></script>
