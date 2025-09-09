@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <!-- Basic calculat0r-->
+    <!-- Basic calculator-->
     <div class="calculator">
 
         <!--navbar-->
@@ -99,25 +99,29 @@
             <div class="col-3"><button class="btn btn-primary w-100" onclick="append_val('=')">=</button></div>
         </div>
     </div>
-    <!-- Calculation menu -->
-    <div class="calculator-menu" id="calculaterMenuPanel">
+    <!-- Calculation menu panel -->
+    <div class="calculator-menu" id="calculatorMenuPanel">
         <nav class="navbar navbar-light">
             <button class=" btn nav-tgg-btn" onclick="toggleCalculatorMenu()"><i class="navbar-toggler-icon"></i> </button>
             <span class="ms-2 fw-semibold">Calculator</span>
         </nav>
     </div>
 
+    <div class="toggle-container" id="toggleContainerPanel"></div>
+    
+    <!-- history panel-->
     <div class="history-menu" id="historyPanel">
         <nav class="navbar navbar-light">
             <span class="ms-2 fw-semibold">History</span>
-            <button class=" btn nav-tgg-btn" onclick="toggleHistory()"><i class="navbar-toggler-icon"></i> </button>
+            <button class=" btn btn-danger" onclick="toggleHistory()"><i class="bi bi-x large-icon"></i> </button>
         </nav>
     </div>
     
+    <!-- memory panel -->
     <div class="memory-menu" id="memoryPanel">
         <nav class="navbar navbar-light">
             <span class="ms-2 fw-semibold">Memory</span>
-            <button class=" btn nav-tgg-btn" onclick="toggleMemory()"><i class="navbar-toggler-icon"></i> </button>
+            <button class=" btn btn-danger" onclick="toggleMemory()"><i class="bi bi-x large-icon"></i> </button>
         </nav>
     </div>
     <script src="/src/script/bootstrap.bundle.min.js"></script>

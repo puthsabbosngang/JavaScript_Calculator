@@ -21,7 +21,7 @@ body {
       text-align: center;
 }
 
-.calculator {
+.calculator, .toggle-container {
     width: 400px;
     border: 1px solid #ddd;
     border-radius: 12px;
@@ -32,6 +32,14 @@ body {
     z-index: 1;
 }
 
+.toggle-container  {
+    background:rgba(248, 249, 250, 0.7) !important;
+    position: fixed !important;
+    z-index: 2 !important;
+    height: 559px;
+    display: none;
+}
+
 .calculator-menu{
       width: 200px;
       border: 1px solid #ddd;
@@ -40,7 +48,7 @@ body {
       background: #fff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       position: fixed;
-      z-index: 2;
+      z-index: 3 !important;
       display: none;
       overflow-y: auto;
       margin-left: -200px;
@@ -57,12 +65,11 @@ body {
       background: #fff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       position: fixed;
-      z-index: 2;
+      z-index: 3 !important;
       display: none;
       overflow-y: auto;
       margin-top: 224px;
 }
-
 
 .display, .form-control{
       height: 110px;
